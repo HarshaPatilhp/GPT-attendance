@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply transition-colors duration-200;
+}
+
+body {
+  @apply bg-gradient-dark bg-fixed text-white;
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl;
+}
+
+.neon-text {
+  @apply bg-gradient-neon bg-clip-text text-transparent font-bold;
+}
+
+.neon-glow {
+  @apply shadow-[0_0_20px_rgba(0,217,255,0.3)];
+}
+
+.btn-primary {
+  @apply px-6 py-2 bg-gradient-neon rounded-lg font-semibold hover:shadow-lg hover:shadow-neon-blue/50 transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply px-6 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg font-semibold hover:bg-white/20;
+}
