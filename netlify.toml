@@ -16,7 +16,7 @@
   to = "/index.html"
   status = 200
 
-[env.production]
-  [env.production.context.production.environment]
-    MONGODB_URI = "mongodb+srv://user:pass@cluster.mongodb.net/bmsit_attendance?retryWrites=true&w=majority"
-    JWT_SECRET = "production-secret-key"
+[build.environment]
+  # These values should be set in Netlify's environment variables
+  MONGODB_URI = "${MONGODB_URI}"
+  JWT_SECRET = "${JWT_SECRET}"
