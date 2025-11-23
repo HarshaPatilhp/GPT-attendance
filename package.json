@@ -12,7 +12,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "vite",
-    "vercel-build": "npm install && npm run build",
+    "vercel-build": "node vercel-build.js",
     "functions": "node server-simple.js"
   },
   "dependencies": {
