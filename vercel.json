@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.js",
+      "src": "api/index.js",
       "use": "@vercel/node"
     },
     {
@@ -16,7 +16,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "dest": "/api"
     },
     {
       "src": "/(.*)",
@@ -24,11 +24,9 @@
     }
   ],
   "functions": {
-    "api/auth/[...all].js": {
-      "maxDuration": 10
-    },
-    "api/events/[...all].js": {
-      "maxDuration": 10
+    "api/index.js": {
+      "maxDuration": 10,
+      "memory": 1024
     }
   }
 }
