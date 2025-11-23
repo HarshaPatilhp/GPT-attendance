@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "netlify/functions/**/*.js",
+      "src": "api/**/*.js",
       "use": "@vercel/node"
     },
     {
@@ -15,12 +15,20 @@
   ],
   "routes": [
     {
-      "src": "/.netlify/functions/(.*)",
-      "dest": "/netlify/functions/$1"
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
     },
     {
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/auth/[...all].js": {
+      "maxDuration": 10
+    },
+    "api/events/[...all].js": {
+      "maxDuration": 10
+    }
+  }
 }
