@@ -5,7 +5,9 @@
       "src": "api/index.js",
       "use": "@vercel/node@3.0.0",
       "config": {
-        "includeFiles": ["netlify/functions/**"]
+        "includeFiles": ["netlify/functions/**"],
+        "maxDuration": 10,
+        "memory": 1024
       }
     },
     {
@@ -35,12 +37,6 @@
   "build": {
     "env": {
       "NODE_VERSION": "20.x"
-    }
-  },
-  "functions": {
-    "api/index.js": {
-      "maxDuration": 10,
-      "memory": 1024
     }
   }
 }
